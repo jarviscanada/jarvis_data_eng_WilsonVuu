@@ -17,7 +17,7 @@ memory_free=$(echo "$vmstat_mb" | tail -1 | awk '{print $4}' | xargs)
 cpu_idle=$(echo "$vmstat_mb" | tail -1 | awk '{print $15}' | xargs)
 cpu_kernel=$(echo "$vmstat_mb" | tail -1 | awk '{print $14}' | xargs)
 disk_io=$(echo "$vmstat_mb" | tail -1 | awk '{print $9+$10}' | xargs) # Total disk I/O (blocks read + blocks written per second)
-disk_available=$(df -BM / | awk 'NR==2 {gsub("M","",$4); print $4}' | xargs)
+disk_available=$(df -BM / | awk 'NR==2 {print $4+0}' | xargs) # +0 is a shortcut to forcing it as a number
 timestamp=$(date -u '+%Y-%m-%d %H:%M:%S')
 
 host_id="(SELECT id FROM host_info WHERE hostname='$hostname')"
