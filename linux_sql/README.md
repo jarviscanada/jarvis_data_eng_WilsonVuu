@@ -86,7 +86,7 @@ without manual intervention.
 crontab -e
 
 # Run host_usage.sh every minute
-* * * * * bash /home/rocky/scripts/host_usage.sh localhost 5432 host_agent db_username db_password > /tmp/host_usage.log
+* * * * * bash /home/rocky/scripts/host_usage.sh <host> <port> host_agent db_username db_password > /tmp/host_usage.log
 
 # Verify crontab is set
 crontab -l
