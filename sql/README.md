@@ -141,6 +141,159 @@ SELECT m.firstname AS memfname, m.surname AS memsname, a.firstname AS recfname,a
 	LEFT OUTER JOIN cd.members AS a ON
 	m.recommendedby = a.memid
 	ORDER BY memsname, memfname;
+
+/*
+Q15. How can you output a list of all members who have recommended another member? Ensure that there are no duplicates in the list, and that results are ordered by (surname, firstname).
+*/
+SELECT DISTINCT M.firstname, M.surname 
+	FROM cd.members AS M
+	JOIN cd.members AS R
+	ON 
+	M.memid = R.recommendedby
+	ORDER BY surname, firstname;
+
+/*
+Q16. How can you output a list of all members, including the individual who recommended them (if any), without using any joins? Ensure that there are no duplicates in the list, and that each firstname + surname pairing is formatted as a column and ordered.
+*/
+
+SELECT DISTINCT M.firstname || ' ' || M.surname AS member, 
+	(SELECT R.firstname || ' ' || R.surname AS recommender 
+	 	FROM cd.members as R
+		WHERE R.memid = M.recommendedby
+	)
+	FROM cd.members AS M
+ORDER BY member;
+
+/*
+Q16. Produce a count of the number of recommendations each member has made. Order by member ID.
+*/
+
+SELECT recommendedby, COUNT(*) FROM cd.members
+	WHERE recommendedby IS NOT NULL
+	GROUP BY recommendedby
+ORDER BY recommendedby;
+
+/*
+Q17. Produce a count of the number of recommendations each member has made. Order by member ID.
+*/
+
+SELECT recommendedby, COUNT(*) FROM cd.members
+	WHERE recommendedby IS NOT NULL
+	GROUP BY recommendedby
+ORDER BY recommendedby;
+
+/*
+Q17. Produce a list of the total number of slots booked per facility. For now, just produce an output table consisting of facility id and slots, sorted by facility id.
+*/
+
+SELECT facid, SUM(slots) FROM cd.bookings
+  GROUP BY facid
+ORDER BY facid
+
+/*
+Q18. Produce a list of the total number of slots booked per facility in the month of September 2012. Produce an output table consisting of facility id and slots, sorted by the number of slots.
+*/
+
+SELECT facid, SUM(slots) as "Total Slots" FROM cd.bookings
+  WHERE starttime >= '2012-09-01' AND starttime < '2012-10-01'
+  GROUP BY facid
+  ORDER BY SUM(slots)
+
+/*
+Q19. Produce a list of the total number of slots booked per facility per month in the year of 2012. Produce an output table consisting of facility id and slots, sorted by the id and month.
+*/
+
+SELECT facid, EXTRACT(month FROM starttime) as month, SUM(slots) as "Total Slots"
+FROM cd.bookings
+WHERE EXTRACT(year FROM starttime) = 2012
+  GROUP BY facid, month
+ORDER BY facid, month
+
+/*
+Q19. Find the total number of members (including guests) who have made at least one booking.
+*/
+
+SELECT COUNT(distinct memid) FROM cd.bookings
+
+/*
+Q20. Produce a list of each member name, id, and their first booking after September 1st 2012. Order by member ID.
+*/
+
+SELECT m.surname, m.firstname, m.memid, min(b.starttime) FROM cd.members AS m 
+JOIN cd.bookings as b
+	ON m.memid = b.memid
+	WHERE b.starttime >= '2012-09-01'
+	GROUP BY m.surname, m.firstname, m.memid
+ORDER BY m.memid
+
+/*
+Q21. Produce a list of member names, with each row containing the total member count. Order by join date, and include guest members.
+*/
+
+SELECT m.surname, m.firstname, m.memid, min(b.starttime) FROM cd.members AS m 
+JOIN cd.bookings as b
+	ON m.memid = b.memid
+	WHERE b.starttime >= '2012-09-01'
+	GROUP BY m.surname, m.firstname, m.memid
+ORDER BY m.memid
+
+/*
+Q22. Produce a list of member names, with each row containing the total member count. Order by join date, and include guest members.
+*/
+
+SELECT COUNT(*) over(), firstname, surname FROM cd.members
+ORDER BY joindate
+
+/*
+Q23. Output the facility id that has the highest number of slots booked. Ensure that in the event of a tie, all tieing results get output.
+*/
+
+select facid, total from (
+	select facid, sum(slots) total, rank() over (order by sum(slots) desc) rank
+        	from cd.bookings
+		group by facid
+	) as ranked
+	where rank = 1
+
+NOTE 
+-> Group bookings by facility -> sum slots -> rank them -> return the top ones (including ties)”
+
+/*
+Q24. Output the names of all members, formatted as 'Surname, Firstname'
+*/
+
+SELECT (surname || ', ' || firstname)  as NAME FROM cd.members
+
+
+/*
+Q25. Output the names of all members, formatted as 'Surname, Firstname'
+/*
+
+SELECT memid, telephone FROM cd.members WHERE telephone ~ '[()]';
+ORDER BY memid;
+
+/*
+Q26. You'd like to produce a count of how many members you have whose surname starts with each letter of the alphabet. Sort by the letter, and don't worry about printing out a letter if the count is 0.
+/*
+
+SELECT substr (m.surname,1,1) AS letter, COUNT(*) AS count 
+    FROM cd.members m
+    GROUP BY letter
+    ORDER BY letter        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 	
