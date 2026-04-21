@@ -24,6 +24,7 @@ skills:
     - MongoDB
     - Symfony/Composer
     - MySQL
+    - C
 # List of Jarvis projects
 jarvis_projects:
   - name: "Cluster Monitor"
