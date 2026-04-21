@@ -16,7 +16,7 @@ The goal is to strengthen foundational SQL skills commonly required for backend,
 ```SQL
 
 /*
-Create tbe members table
+Create the members table
 */
 
 Create table cd.members(
@@ -29,8 +29,7 @@ Create table cd.members(
     recommendedby integer,
     joindate timestamp not null,
     constraint memid_pk primary key (memid),
-    constraint  recommend_memid_fk foreign key (recommendedby) 
-        references cd.members(memid) on delete set null
+    constraint  recommend_memid_fk foreign key (recommendedby)  
 );
 
 /*
