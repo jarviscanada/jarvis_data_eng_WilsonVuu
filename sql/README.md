@@ -45,7 +45,7 @@ create table cd.bookings(
     slots integer not null,
     constraint booking_pk primary key (bookid),
     constraint bookings_facility_fk foreign key (facid) references cd.facilities(facid),
-    constraint bookings_member_fk foreign key (memid) refeerence cd.members(memid)
+    constraint bookings_member_fk foreign key (memid) references cd.members(memid)
 );
 
 /*
