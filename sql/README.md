@@ -1,8 +1,69 @@
 # Introduction
 
+This project is a hands-on SQL learning exercise focused on building core relational database (RDBMS) skills using PostgreSQL. It simulates a club management system where users interact with data related to members, facilities, and bookings.
+
+The project demonstrates practical SQL usage by solving real-world style problems involving:
+
+Data definition (DDL)
+Data manipulation (DML)
+Querying and reporting
+
+The goal is to strengthen foundational SQL skills commonly required for backend, data engineering, and analytics roles.
+
 # SQL Queries
 
 ###### Table Setup (DDL)
+```SQL
+
+/*
+Create tbe members table
+*/
+
+Create table cd.members(
+    memid integer not null,
+    surname varchar(200) not null,
+    firstname varchar(200) not null,
+    address varchar(300) not null,
+    zipcode integer not null,
+    telephone varchar(20) not null,
+    recommendedby integer,
+    joindate timestamp not null,
+    constraint memid_pk primary key (memid),
+    constraint  recommend_memid_fk foreign key (recommendedby) 
+        references cd.members(memid) on delete set null
+);
+
+/*
+Create the bookings table
+*/
+
+create table cd.bookings(
+    bookid integer not null,
+    facid integer not null,
+    memid integer not null,
+    starttime timestamp not null,
+    slots integer not null,
+    constraint booking_pk primary key (bookid),
+    constraint bookings_facility_fk foreign key (facid) references cd.facilities(facid),
+    constraint bookings_member_fk foreign key (memid) refeerence cd.members(memid)
+);
+
+/*
+Create the facilities table
+*/
+
+create table cd.facilities (
+    facid integer not null,
+    name varchar(100) not null,
+    membercost numeric not null,
+    guestcost numeric not null,
+    initaloutlay numeric not null,
+    monthlymaintenance numeric not null,
+    constraint facilites_pk primary key (facid)
+);
+```
+###### Questions
+
 ```sql
 /*
 Q1. The club is adding a new facility - a spa. We need to add it into the facilities table. Use the following values:
@@ -92,7 +153,7 @@ Q10. How can you produce a list of members who joined after the start of Septemb
 */
 
 SELECT memid, surname, firstname, joindate FROM cd.members
-	WHERE joindate >= '2012-07-01'
+	WHERE joindate >= '2012-07-01';
 
 
 /*
@@ -101,7 +162,7 @@ Q11.You, for some reason, want a combined list of all surnames and all facility 
 
 SELECT surname FROM cd.members AS m
 	UNION
-	SELECT name FROM cd.facilities AS f
+	SELECT name FROM cd.facilities AS f;
 
 
 /*
@@ -131,7 +192,7 @@ SELECT b.starttime as start, f.name as name FROM cd.bookings AS b
 		b.starttime >='2012-09-21'
 		AND
 		b.starttime < '2012-09-22'
-ORDER BY b.starttime ASC
+ORDER BY b.starttime ASC;
 
 /*
 Q14. How can you output a list of all members, including the individual who recommended them (if any)? Ensure that results are ordered by (surname, firstname).
@@ -188,7 +249,7 @@ Q17. Produce a list of the total number of slots booked per facility. For now, j
 
 SELECT facid, SUM(slots) FROM cd.bookings
   GROUP BY facid
-ORDER BY facid
+ORDER BY facid;
 
 /*
 Q18. Produce a list of the total number of slots booked per facility in the month of September 2012. Produce an output table consisting of facility id and slots, sorted by the number of slots.
@@ -197,7 +258,7 @@ Q18. Produce a list of the total number of slots booked per facility in the mont
 SELECT facid, SUM(slots) as "Total Slots" FROM cd.bookings
   WHERE starttime >= '2012-09-01' AND starttime < '2012-10-01'
   GROUP BY facid
-  ORDER BY SUM(slots)
+  ORDER BY SUM(slots);
 
 /*
 Q19. Produce a list of the total number of slots booked per facility per month in the year of 2012. Produce an output table consisting of facility id and slots, sorted by the id and month.
@@ -207,13 +268,13 @@ SELECT facid, EXTRACT(month FROM starttime) as month, SUM(slots) as "Total Slots
 FROM cd.bookings
 WHERE EXTRACT(year FROM starttime) = 2012
   GROUP BY facid, month
-ORDER BY facid, month
+ORDER BY facid, month;
 
 /*
 Q19. Find the total number of members (including guests) who have made at least one booking.
 */
 
-SELECT COUNT(distinct memid) FROM cd.bookings
+SELECT COUNT(distinct memid) FROM cd.bookings;
 
 /*
 Q20. Produce a list of each member name, id, and their first booking after September 1st 2012. Order by member ID.
@@ -224,7 +285,7 @@ JOIN cd.bookings as b
 	ON m.memid = b.memid
 	WHERE b.starttime >= '2012-09-01'
 	GROUP BY m.surname, m.firstname, m.memid
-ORDER BY m.memid
+ORDER BY m.memid;
 
 /*
 Q21. Produce a list of member names, with each row containing the total member count. Order by join date, and include guest members.
@@ -235,53 +296,62 @@ JOIN cd.bookings as b
 	ON m.memid = b.memid
 	WHERE b.starttime >= '2012-09-01'
 	GROUP BY m.surname, m.firstname, m.memid
-ORDER BY m.memid
+ORDER BY m.memid;
 
 /*
-Q22. Produce a list of member names, with each row containing the total member count. Order by join date, and include guest members.
+Q22. Produce a list of member names, with each row containing the total member count. 
+Order by join date, and include guest members.
 */
+SELECT COUNT(*) OVER(), firstname, surname 
+FROM cd.members
+ORDER BY joindate;
 
-SELECT COUNT(*) over(), firstname, surname FROM cd.members
-ORDER BY joindate
 
 /*
-Q23. Output the facility id that has the highest number of slots booked. Ensure that in the event of a tie, all tieing results get output.
+Q23. Output the facility id that has the highest number of slots booked.
+Ensure that in the event of a tie, all tieing results get output.
+*/
+SELECT facid, total 
+FROM (
+    SELECT facid, 
+           SUM(slots) AS total, 
+           RANK() OVER (ORDER BY SUM(slots) DESC) AS rank
+    FROM cd.bookings
+    GROUP BY facid
+) AS ranked
+WHERE rank = 1;
+
+/*
+Group bookings by facility -> sum slots -> rank them -> return top (including ties)
 */
 
-select facid, total from (
-	select facid, sum(slots) total, rank() over (order by sum(slots) desc) rank
-        	from cd.bookings
-		group by facid
-	) as ranked
-	where rank = 1
-
-NOTE 
--> Group bookings by facility -> sum slots -> rank them -> return the top ones (including ties)”
 
 /*
 Q24. Output the names of all members, formatted as 'Surname, Firstname'
 */
-
-SELECT (surname || ', ' || firstname)  as NAME FROM cd.members
+SELECT surname || ', ' || firstname AS name 
+FROM cd.members;
 
 
 /*
-Q25. Output the names of all members, formatted as 'Surname, Firstname'
-/*
-
-SELECT memid, telephone FROM cd.members WHERE telephone ~ '[()]';
+Q25. Find members whose telephone numbers contain parentheses.
+*/
+SELECT memid, telephone 
+FROM cd.members 
+WHERE telephone ~ '[()]'
 ORDER BY memid;
 
+
 /*
-Q26. You'd like to produce a count of how many members you have whose surname starts with each letter of the alphabet. Sort by the letter, and don't worry about printing out a letter if the count is 0.
-/*
+Q26. Count how many members have surnames starting with each letter.
+*/
+SELECT SUBSTR(surname, 1, 1) AS letter, 
+       COUNT(*) AS count
+FROM cd.members
+GROUP BY letter
+ORDER BY letter;
 
-SELECT substr (m.surname,1,1) AS letter, COUNT(*) AS count 
-    FROM cd.members m
-    GROUP BY letter
-    ORDER BY letter        
-
-
+```
 
 
 
