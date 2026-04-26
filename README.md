@@ -1,14 +1,14 @@
 # Wilson Vuu . Jarvis Consulting
 
-I am a Computer Science graduate from Wilfrid Laurier University with a strong foundation in full-stack development and a track record of delivering software solutions. My experience at Lowe-Martin and Cardata cultivated a deep interest in the data layer, from building pipelines and automating workflows to optimizing database performance, leading me to focus on designing and supporting scalable, end-to-end data pipelines using modern data stack technologies, with a genuine passion for transforming raw, complex data into reliable, meaningful insights that drive real business decisions.
+I am a Computer Science graduate from Wilfrid Laurier University with experience building full-stack applications and end-to-end data pipelines. During my time at Cardata, I engineered Laravel and Node.js backend services and implemented a modular React and TypeScript architecture to enhance system maintainability. Previously, at Lowe-Martin, I automated data sanitization using Python and VBA, streamlining shipping accuracy and reducing manual overhead through batch processing. I am particularly driven by the data engineering side of development, enjoying the process of mapping data flows to identify bottlenecks and building reliable pipelines that transform raw data into a dependable foundation for decision-making.
 
 ## Skills
 
-**Proficient:** Java, Python, RDBMS/SQL, React, PHP
+**Proficient:** Java, Python, RDBMS/SQL, React.js, PHP (Laravel)
 
-**Competent:** Docker, HTML/CSS, Git, Node.js, Laravel
+**Competent:** Docker, HTML/CSS, VBA, Node.js, Linux/Bash
 
-**Familiar:** Django, MongoDB, Symfony/Composer, MySQL, C
+**Familiar:** Django, C, Symfony/Composer, Machine Learning, PySpark
 
 ## Jarvis Projects
 
@@ -19,18 +19,18 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Highlighted Projects
-**Inventory Management System**: Engineered a full-stack inventory platform using Spring Boot, Java, React, and MySQL with efficient CRUD operations and a robust RESTful API architecture. Designed a normalized MySQL schema optimized for transactional consistency and performance, and automated dependency management with Maven to improve build consistency and reduce setup time.
+**Inventory Management System**: Engineered a full-stack inventory platform using Spring Boot, Java, React, and MySQL with efficient CRUD operations and a robust RESTful API architecture. Designed a normalized MySQL schema optimized for transactional consistency and performance.
 
-**Smart Investors**: Designed and built a scalable web application using React, MySQL, and PHP to support complex financial simulations. Developed a stock market database schema in MySQL and integrated real-time stock data via Yahoo Finance API to deliver a seamless user experience.
+**Smart Investors**: Developed a full-stack stock market simulator to enable users to practice investment strategies in a semi real-time environment. Designed a relational database schema to track complex financial simulations and integrated the Yahoo Finance API to provide live market data for accurate portfolio tracking.
 
 
 ## Professional Experiences
 
 **Software Developer/Data Engineer, Jarvis (2026-present)**: Contributed to backend service and data pipeline development within a fast-paced Agile environment.
 
-**Full Stack Software Engineer, Cardata (Nov 2021-Jul 2022)**: Refactored legacy Vue.js into a modern React and TypeScript architecture, improving system maintainability and scalability. Built Laravel and Node.js backend services to streamline daily payment processing, reducing calculation latency by 15%. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.
+**Full Stack Software Engineer, Cardata (Nov 2021-Jul 2022)**: Integrated React and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.
 
-**Data/Programmer Analyst Intern, Lowe-Martin (May 2019-Sep 2019)**: Automated data sanitization processes using VBA and Python to sanitize CSV data, resulting in a 12.2% increase in shipping accuracy. Built customized report generation tools in Microsoft Access and Excel, enhancing data validation efficiency by 30%. Developed a functional prototype of the corporate website using HTML/CSS and JavaScript.
+**Data/Programmer Analyst Intern, Lowe-Martin (May 2019-Sep 2019)**: Automated data sanitization processes using VBA and Python to sanitize CSV data, resulting in an increase in shipping accuracy. Built customized report generation tools in Microsoft Access and Excel for data validation efficiency. Developed a functional prototype of the corporate website using HTML/CSS and JavaScript.
 
 
 ## Education
@@ -38,6 +38,5 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Miscellaneous
-- Badminton player
-- Hiking enthusiast
-- Volunteer, Buddhist Temple
+- Badminton player: Still a beginner, but I play in weekly recreational sessions. It’s a fun way to stay active, and I really enjoy the quick pace and the social side of the game.
+- Hiking enthusiast: I love hitting local trails and getting lost in conservation areas for a few hours. For me, it's just a good way to clear my mind.
