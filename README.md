@@ -15,7 +15,7 @@ I am a Computer Science graduate from Wilfrid Laurier University with experience
 Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu)
 
 
-**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/linux_sql)]: A cron-based monitoring agent that captures hardware specs and resource usage across a Linux cluster, storing data in a centralized PostgreSQL database managed via Docker for analysis and reporting.
+**Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/linux_sql)]: The Linux Cluster Monitoring project is a system designed to track hardware specifications and resource usage across a networked Linux cluster. Each node collects its hardware profile on initialization and continuously logs CPU, memory, and disk metrics at scheduled intervals using crontab, with all data stored in a centralized PostgreSQL database managed through Docker. The data is organized into two tables covering hardware specifications and ongoing resource usage, giving the LCA team at Jarvis the visibility to monitor system performance over time and make informed decisions around resource allocation.
 
 
 ## Highlighted Projects
@@ -26,7 +26,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 ## Professional Experiences
 
-**Software Developer/Data Engineer, Jarvis (2026-present)**: Contributed to backend service and data pipeline development within a fast-paced Agile environment.
+**Software Developer/Data Engineer, Jarvis (2026-present)**: Developed backend services and data pipelines within Linux environments, contributing to software development and data engineering projects at Jarvis.
 
 **Full Stack Software Engineer, Cardata (Nov 2021-Jul 2022)**: Integrated React and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.
 
