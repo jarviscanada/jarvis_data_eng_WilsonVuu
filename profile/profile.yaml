@@ -4,7 +4,7 @@ name: "Wilson Vuu"
 github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: "I am a Computer Science graduate from Wilfrid Laurier University with experience building full-stack applications and end-to-end data pipelines. At Cardata, I built backend services and APIs in Laravel and Node.js to handle reimbursement calculations and financial workflows, while contributing to the frontend with React and TypeScript, where I improved the architecture and built reusable components to make the application faster and easier to build on. Previously at Lowe-Martin, I automated data sanitization processes using Python and VBA, improving shipping accuracy and reducing manual effort through efficient batch processing. What excites and makes me passionate about the software industry is that there is always something new to learn or a better way to build something. I genuinely enjoy that process, whether it is picking up a new technology or finding a cleaner solution to a problem I have already solved."
+summary: "I am a Computer Science graduate from Wilfrid Laurier University with experience building full-stack applications and end-to-end data pipelines. At Cardata, I built backend services and APIs in Laravel and Node.js to handle reimbursement calculations and financial workflows, while contributing to the frontend with React.js and TypeScript, where I improved the architecture and built reusable components to make the application faster and easier to build on. Previously at Lowe-Martin, I automated data sanitization processes using Python and VBA, improving shipping accuracy and reducing manual effort through efficient batch processing. What excites and makes me passionate about the software industry is that there is always something new to learn or a better way to build something. I genuinely enjoy that process, whether it is picking up a new technology or finding a cleaner solution to a problem I have already solved."
 # Group your skills by level.
 skills:
   proficient:
@@ -15,15 +15,15 @@ skills:
     - PHP (Laravel)
   competent:
     - Docker
-    - HTML/CSS
+    - Linux/Bash
     - VBA
     - Node.js
-    - Linux/Bash
+    - HTML/CSS
   familiar:
     - Django
     - C
     - Symfony/Composer
-    - Machine Learning
+    - Agile/Scrum
     - PySpark
 # List of Jarvis projects
 jarvis_projects:
@@ -34,7 +34,7 @@ jarvis_projects:
 highlighted_projects:
   - name: "Inventory Management System"
     git_url: ""
-    description: "Developed a full-stack inventory management system using Spring Boot, Java, React, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system."
+    description: "Developed a full-stack inventory management system using Spring Boot, Java, React.js, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system."
   - name: "Smart Investors"
     git_url: ""
     description: "Developed a full-stack stock market simulator using PHP, JavaScript, and MariaDB to enable users to practice investment strategies in a semi real-time environment. Designed a relational database schema to track user portfolios and transaction history, and integrated the Yahoo Finance API to provide live market data for accurate portfolio tracking."
@@ -47,7 +47,7 @@ professional_experience:
   - title: "Full Stack Software Engineer"
     company: "Cardata"
     duration: "Nov 2021-Jul 2022"
-    description: "Integrated React and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage."
+    description: "Integrated React.js and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage."
   - title: "Data/Programmer Analyst Intern"
     company: "Lowe-Martin"
     duration: "May 2019-Sep 2019"

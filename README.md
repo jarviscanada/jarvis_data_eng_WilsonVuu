@@ -1,14 +1,14 @@
 # Wilson Vuu . Jarvis Consulting
 
-I am a Computer Science graduate from Wilfrid Laurier University with experience building full-stack applications and end-to-end data pipelines. At Cardata, I built backend services and APIs in Laravel and Node.js to handle reimbursement calculations and financial workflows, while contributing to the frontend with React and TypeScript, where I improved the architecture and built reusable components to make the application faster and easier to build on. Previously at Lowe-Martin, I automated data sanitization processes using Python and VBA, improving shipping accuracy and reducing manual effort through efficient batch processing. What excites and makes me passionate about the software industry is that there is always something new to learn or a better way to build something. I genuinely enjoy that process, whether it is picking up a new technology or finding a cleaner solution to a problem I have already solved.
+I am a Computer Science graduate from Wilfrid Laurier University with experience building full-stack applications and end-to-end data pipelines. At Cardata, I built backend services and APIs in Laravel and Node.js to handle reimbursement calculations and financial workflows, while contributing to the frontend with React.js and TypeScript, where I improved the architecture and built reusable components to make the application faster and easier to build on. Previously at Lowe-Martin, I automated data sanitization processes using Python and VBA, improving shipping accuracy and reducing manual effort through efficient batch processing. What excites and makes me passionate about the software industry is that there is always something new to learn or a better way to build something. I genuinely enjoy that process, whether it is picking up a new technology or finding a cleaner solution to a problem I have already solved.
 
 ## Skills
 
 **Proficient:** Java, Python, RDBMS/SQL, React.js, PHP (Laravel)
 
-**Competent:** Docker, HTML/CSS, VBA, Node.js, Linux/Bash
+**Competent:** Docker, Linux/Bash, VBA, Node.js, HTML/CSS
 
-**Familiar:** Django, C, Symfony/Composer, Machine Learning, PySpark
+**Familiar:** Django, C, Symfony/Composer, Agile/Scrum, PySpark
 
 ## Jarvis Projects
 
@@ -19,7 +19,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Highlighted Projects
-**Inventory Management System**: Developed a full-stack inventory management system using Spring Boot, Java, React, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system.
+**Inventory Management System**: Developed a full-stack inventory management system using Spring Boot, Java, React.js, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system.
 
 **Smart Investors**: Developed a full-stack stock market simulator using PHP, JavaScript, and MariaDB to enable users to practice investment strategies in a semi real-time environment. Designed a relational database schema to track user portfolios and transaction history, and integrated the Yahoo Finance API to provide live market data for accurate portfolio tracking.
 
@@ -28,7 +28,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 **Software Developer/Data Engineer, Jarvis (2026-present)**: Designed backend services and data pipelines in Java across Linux environments as part of Jarvis' software and data engineering team.
 
-**Full Stack Software Engineer, Cardata (Nov 2021-Jul 2022)**: Integrated React and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.
+**Full Stack Software Engineer, Cardata (Nov 2021-Jul 2022)**: Integrated React.js and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.
 
 **Data/Programmer Analyst Intern, Lowe-Martin (May 2019-Sep 2019)**: Used VBA and Python to automate the sanitization of CSV data, resulting in an increase in shipping accuracy. Built custom report generation tools in Microsoft Access and Excel to display and present shipping and address data for internal review and validation. Built a prototype of the corporate website using HTML/CSS and JavaScript as a visual mockup for leadership to review and approve.
 
