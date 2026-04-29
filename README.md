@@ -19,14 +19,14 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Highlighted Projects
-**Inventory Management System**: Engineered a full-stack inventory platform using Spring Boot, Java, React, and MySQL with efficient CRUD operations and a robust RESTful API architecture. Designed a normalized MySQL schema optimized for transactional consistency and performance.
+**Inventory Management System**: Developed a full-stack inventory management system using Spring Boot, Java, React, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system.
 
-**Smart Investors**: Developed a full-stack inventory management system using Spring Boot, Java, React, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system.
+**Smart Investors**: Developed a full-stack stock market simulator using PHP, JavaScript, and MariaDB to enable users to practice investment strategies in a semi real-time environment. Designed a relational database schema to track user portfolios and transaction history, and integrated the Yahoo Finance API to provide live market data for accurate portfolio tracking.
 
 
 ## Professional Experiences
 
-**Software Developer/Data Engineer, Jarvis (2026-present)**: Developed backend services and data pipelines within Linux environments, contributing to software development and data engineering projects at Jarvis.
+**Software Developer/Data Engineer, Jarvis (2026-present)**: Designed backend services and data pipelines in Java across Linux environments as part of Jarvis' software and data engineering team.
 
 **Full Stack Software Engineer, Cardata (Nov 2021-Jul 2022)**: Integrated React and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.
 
