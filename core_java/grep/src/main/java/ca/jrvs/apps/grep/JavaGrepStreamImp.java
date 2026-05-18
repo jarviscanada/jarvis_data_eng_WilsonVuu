@@ -3,12 +3,14 @@ package ca.jrvs.apps.grep;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.*;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 public class JavaGrepStreamImp implements JavaGrepStream {
 
@@ -98,22 +100,25 @@ public class JavaGrepStreamImp implements JavaGrepStream {
   @Override
   public void writeToFile(Stream<String> lines) throws IOException {
     if (lines == null) {
-      logger.warn("No lines to write, skipping writeToFile step");
+      logger.warn("No lines to write, skipping file creation.");
       return;
     }
 
-    Path outPath = Paths.get(getOutFile());
-
+    Path outPath = Paths.get(this.outFile);
     try (BufferedWriter writer = Files.newBufferedWriter(outPath);
-        Stream<String> s = lines) {                 // close stream here
-      for (String line : (Iterable<String>) s::iterator) {
-        writer.write(line);
-        writer.newLine();
-      }
+        Stream<String> stream = lines) {
+      stream.forEach(line -> {
+        try {
+          writer.write(line);
+          writer.newLine();
+        } catch (IOException e) {
+          throw new UncheckedIOException(e);
+        }
+      });
       logger.info("File written successfully: {}", outPath);
-    } catch (IOException e) {
+    } catch (UncheckedIOException e) {
       logger.error("Failed to write to file: {}", outPath, e);
-      throw e;
+      throw new RuntimeException(e);
     }
   }
 
@@ -150,14 +155,13 @@ public class JavaGrepStreamImp implements JavaGrepStream {
     if (outFile == null || outFile.trim().isEmpty()) {
       throw new IllegalArgumentException("outFile cannot be null or empty");
     }
-
     Path parent = Paths.get(outFile).getParent();
     if (parent != null && !Files.exists(parent)) {
       throw new IllegalArgumentException("Parent directory does not exist: " + parent);
     }
-
     this.outFile = outFile;
   }
+
 
   public static void main(String[] args) {
     BasicConfigurator.configure();
