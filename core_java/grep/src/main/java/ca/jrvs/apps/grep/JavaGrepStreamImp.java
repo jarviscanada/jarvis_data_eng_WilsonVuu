@@ -26,11 +26,14 @@ public class JavaGrepStreamImp implements JavaGrepStream {
    */
   @Override
   public void process() throws IOException {
-    Stream<String> matchedLines = listFiles(getRootPath())
-        .flatMap(this::readLines)
-        .filter(this::containsPattern);
+    try (Stream<File> files = listFiles(getRootPath())) {
+        Stream <String> matchedLines = files
+            .flatMap(this::readLines)
+            .filter(this::containsPattern);
 
-    writeToFile(matchedLines);
+      writeToFile(matchedLines);
+    } 
+
   }
 
   /**
@@ -38,7 +41,7 @@ public class JavaGrepStreamImp implements JavaGrepStream {
    *
    */
   @Override
-  public Stream<File> listFiles(String rootDir) {
+  public Stream<File> listFiles(String rootDir) throws IOException {
     if (rootDir == null || rootDir.trim().isEmpty()) {
       throw new IllegalArgumentException("rootDir cannot be null or empty");
     }
@@ -51,14 +54,9 @@ public class JavaGrepStreamImp implements JavaGrepStream {
       throw new IllegalArgumentException("Path is not a directory: " + rootDir);
     }
 
-    try {
-      return Files.walk(path)
+    return Files.walk(path)
           .filter(Files::isRegularFile)
           .map(Path::toFile);
-    } catch (IOException e) {
-      logger.error("Failed to walk directory: {}", rootDir, e);
-      throw new RuntimeException(e);
-    }
   }
 
   /**
@@ -116,9 +114,9 @@ public class JavaGrepStreamImp implements JavaGrepStream {
         }
       });
       logger.info("File written successfully: {}", outPath);
-    } catch (UncheckedIOException e) {
+    } catch (IOException e) {
       logger.error("Failed to write to file: {}", outPath, e);
-      throw new RuntimeException(e);
+      throw new UncheckedIOException(e);
     }
   }
 

@@ -1,10 +1,9 @@
 package ca.jrvs.apps.grep;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,17 +21,13 @@ public class JavaGrepImp implements JavaGrep {
   private String rootPath;
   private String outFile;
   private Pattern pattern;
+
   @Override
   public void process() {
-    List<String> foundLines = new ArrayList<>();
-
-    for (File file : listFiles(this.getRootPath())) {
-      for (String line : readLines(file)) {
-        if (containsPattern(line)) {
-          foundLines.add(line);
-        }
-      }
-    }
+    Stream<String> foundLines = listFiles(this.getRootPath())
+        .stream()
+        .flatMap(file -> readLines(file).stream())
+        .filter(this::containsPattern);
     writeToFile(foundLines);
   }
 
@@ -67,7 +62,8 @@ public class JavaGrepImp implements JavaGrep {
       throw new IllegalArgumentException("inputFile cannot be null");
     }
     if (!inputFile.exists() || !inputFile.isFile()) {
-      throw new IllegalArgumentException ("inputFile does not exist or is not a file: " + inputFile);
+      throw new IllegalArgumentException(
+          "inputFile does not exist or is not a file: " + inputFile);
     }
 
     try {
@@ -85,36 +81,34 @@ public class JavaGrepImp implements JavaGrep {
   }
 
   @Override
-  public void writeToFile(List<String> lines) {
-    if (lines == null || lines.isEmpty()) {
+  public void writeToFile(Stream<String> lines) {
+    if (lines == null) {
       logger.warn("No lines to write, skipping writeToFile step");
       return;
     }
 
     Path outPath = Paths.get(getOutFile());
-
-    try (BufferedWriter writer = Files.newBufferedWriter(outPath)) {
-      for (String line : lines) {
-        writer.write(line);
-        writer.newLine();
-      }
+    try (BufferedWriter writer = Files.newBufferedWriter(outPath);
+        Stream<String> stream = lines) {
+      stream.forEach(line -> {
+        try {
+          writer.write(line);
+          writer.newLine();
+        } catch (IOException e) {
+          throw new UncheckedIOException(e);
+        }
+      });
       logger.info("File written successfully: {}", outPath);
     } catch (IOException e) {
       logger.error("Failed to write to file: {}", outPath, e);
-      throw new RuntimeException(e);
+      throw new UncheckedIOException(e);
     }
   }
 
   //Getters
-  @Override public String getRegex()    {
-    return regex;
-  }
-  @Override public String getRootPath() {
-    return rootPath;
-  }
-  @Override public String getOutFile()  {
-    return outFile;
-  }
+  @Override public String getRegex()    { return regex; }
+  @Override public String getRootPath() { return rootPath; }
+  @Override public String getOutFile()  { return outFile; }
 
   //Setters
   @Override
@@ -123,7 +117,6 @@ public class JavaGrepImp implements JavaGrep {
       throw new IllegalArgumentException("regex cannot be null or empty");
     }
     this.regex = regex;
-    //so that it doesn't keep compiling the pattern
     this.pattern = Pattern.compile(this.getRegex());
   }
 
@@ -140,12 +133,10 @@ public class JavaGrepImp implements JavaGrep {
     if (outFile == null || outFile.trim().isEmpty()) {
       throw new IllegalArgumentException("outFile cannot be null or empty");
     }
-
     Path parent = Paths.get(outFile).getParent();
     if (parent != null && !Files.exists(parent)) {
       throw new IllegalArgumentException("Parent directory does not exist: " + parent);
     }
-
     this.outFile = outFile;
   }
 
