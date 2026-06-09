@@ -9,3 +9,7 @@ out/
 log/
 dependency-reduced-pom.xml
 .idea/
+*.idea
+.DS_Store
+*.iml
+target
