@@ -63,46 +63,44 @@ The dataset contains the following attributes:
 | `country` | Nominal | Country where the customer resides |
 
 ## Data Analytics and Wrangling
+ 
+Notebook can be found here: [retail_data_analytics_wrangling.ipynb](./retail_data_analytics_wrangling.ipynb)
 
-[retail_data_analytics_wrangling.ipynb](./retail_data_analytics_wrangling.ipynb)
-
-The following analytics were performed to help LGS increase revenue:
-
-**Monthly Sales & Growth**
-Monthly sales data reveals a clear Q4 holiday peak in 2010, with November and December generating significantly higher revenue.
-Note that December 2009 and December 2011 appear lower due to potentially an incomplete data at the start and end of the dataset.
-The consistent Q4 seasonal pattern gives LGS a window to proactively plan strategies such as inventory restocking or targeted promotions to
-maximize revenue during these peaks.
-
-**New vs Existing User Revenue Split**
-Existing customers consistently contribute the most up to ~80% of monthly revenue. This tells LGS could potentially invest into customer 
-retention rather than on new customers as this yields a higher ROI.
-
-**RFM Customer Segmentation**
-Customers were scored and segmented into 11 groups using Recency, Frequency, and Monetary analysis.
-LGS can use this to:
-- Reward Champions with loyalty programs and early access or any promotions to focus on retaining.
-- Target At Risk customers with personalized win-back campaigns
-- Avoid wasting marketing budget on Lost customers
-
-**At Risk Revenue Alert**
-Using RFM health status groupings, customers classified as "At Risk" were identified and quantified by revenue.
-This gives LGS a clear picture of how much revenue is at risk and which customer segments require immediate retention outreach.
-
-**Customer Health Status Over Time**
-Customers were grouped into three health categories — Healthy, At Risk, and Churned and tracked monthly. Healthy customers grew nearly 
-double from 2009 to 2011 while At Risk and Churned customers declined, indicating improving retention. LGS can use this as an early warning 
-dashboard to detect churn before revenue is lost.
-
-# Improvements
-
-**Predictive Churn Model**
-Could build a machine learning model (e.g. logistic regression or random forest) to predict which customers are likely to churn 
-before they appear in the At Risk segment to allow for early detection.
-
-**Customer Retention Tracking**
-Group customers by when they first purchased and track how many keep coming back over time follow each group of new customers 
-over time and see how many keep coming back month after month.
-
-**Real-time Churn Detection**
-Instead of identifying at-risk customers after the fact, build an automated alert system that flags customers the moment their RFM score changes.
+The following analyses were performed to help LGS increase revenue:
+ 
+### 1. Monthly Sales and Growth
+ 
+Monthly sales data reveals a clear Q4 holiday peak, with October through December consistently generating the highest revenue each year. Month-over-month growth rates show volatility but a general upward trend into Q4. This gives LGS a predictable window to proactively plan inventory restocking and targeted promotions ahead of peak season.
+ 
+Note: December 2009 and December 2011 appear lower due to incomplete data at the start and end of the dataset.
+ 
+### 2. Top Products by Season
+ 
+Top 10 products were analyzed separately for Q4 (Oct–Dec) versus the rest of the year (Jan–Sep). Products unique to the Q4 top 10 (highlighted in the charts) are seasonal items that appear only during the holiday period. LGS can use this to stock seasonal products ahead of Q4 and distinguish evergreen products from seasonal ones in inventory planning.
+ 
+### 3. New vs. Existing Customer Revenue Split
+ 
+Customers were classified as new (first purchase in the current month) or existing (purchased in a prior month). Existing customers consistently contributed approximately 80% or more of monthly revenue throughout the dataset. This tells LGS that investing in customer retention yields a higher ROI than acquiring new customers.
+ 
+### 4. RFM Customer Segmentation
+ 
+Customers were scored and segmented into 11 groups using Recency, Frequency, and Monetary analysis, scored on a 1–5 scale across each dimension. Segments include Champions, Loyal, Potential Loyalists, New Customers, Promising, Need Attention, About to Sleep, Can't Lose Them, At Risk, Hibernating, and Lost.
+ 
+Segments were further grouped into three retention priority tiers:
+ 
+| Priority | Segments | Customers | Revenue Share |
+|---|---|---|---|
+| High Priority | Champions, Loyal, At Risk, Can't Lose Them | 2,428 | 88.2% |
+| Medium Priority | Potential Loyalists, Need Attention, New Customers | 1,766 | 8.2% |
+| Low Priority | Promising, About to Sleep, Hibernating, Lost | 1,684 | 3.6% |
+ 
+LGS can use this to reward Champions with loyalty programs, target At Risk customers with win-back campaigns, and avoid spending marketing budget on Lost customers.
+ 
+### 5. Revenue by Country
+ 
+Revenue and customer counts were analyzed by country. The UK dominates volume, but Germany, France, Ireland, and the Netherlands show meaningful international demand. LGS can use this to prioritize geographic expansion and tailor international marketing efforts.
+ 
+## Improvements
+ 
+- **Product-level Analysis** — Identify top and bottom performing products by revenue to help optimize inventory decisions.
+- **Cohort Retention Tracking** — Track how groups of new customers behave over time to better measure retention and lifetime value.
