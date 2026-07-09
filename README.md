@@ -1,7 +1,7 @@
 # Wilson Vuu . Jarvis Consulting
 
 With over a year of software development experience building applications end to end, I am currently a Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within Linux-based environments, ranging from monitoring systems that track resource usage across a Linux cluster to pipelines that turn raw transactional data into business insights. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches.
-What draws me to software is that there's always something new to learn or a better way to build something. I genuinely enjoy that process, whether it's picking up a new technology or finding a cleaner solution to a problem I've already solved.
+What draws me to software is that there's always something new to learn or a better way to build something, and I genuinely enjoy chasing that, whether it's a new technology or a cleaner solution to an old problem.
 
 ## Skills
 
@@ -24,9 +24,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Highlighted Projects
-**Inventory Management System**: The Inventory Management System is a full-stack application designed to help businesses organize their catalog and track stock levels. It models the relationships between items, categories, and suppliers through a relational schema, and exposes a RESTful API to create, update, and query inventory data across the catalog, delivering a clear, maintainable foundation for keeping stock accurate and operations running smoothly.
+**Inventory Management System**: The Inventory Management System is a Spring Boot application with a React frontend, designed to help businesses organize their catalog and track stock levels. It models the relationships between items, categories, and suppliers through a relational schema, and exposes a RESTful API to create, update, and query inventory data across the catalog, delivering a clear, maintainable foundation for keeping stock accurate and operations running smoothly.
 
-**Smart Investors**: Smart Investors is a stock market simulator that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed semi-live market data into the platform for accurate portfolio valuations, giving new investors a realistic space to get a feel for the market and see how their decisions play out.
+**Smart Investors**: Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed semi-live market data into the platform for accurate portfolio valuations, giving new investors a realistic space to get a feel for the market and see how their decisions play out.
 
 
 ## Professional Experiences
