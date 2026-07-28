@@ -11,12 +11,12 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu",
   "highlighted_projects": [
     {
-      "description": "Developed a full-stack inventory management system using Spring Boot, Java, React.js, and MySQL, designed to help businesses organize and track item quantities and stock levels. Built with the goal of learning new technologies and understanding how real-world business applications are structured, the project features a relational MySQL schema modeling items, categories, and suppliers alongside a RESTful API to manage inventory data across the entire system.",
+      "description": "The Inventory Management System is a Spring Boot application with a React frontend, designed to help businesses organize their catalog and track stock levels. It models the relationships between items, categories, and suppliers through a relational schema, and exposes a RESTful API to create, update, and query inventory data across the catalog, delivering a clear, maintainable foundation for keeping stock accurate and operations running smoothly.",
       "git_url": "",
       "name": "Inventory Management System"
     },
     {
-      "description": "Developed a full-stack stock market simulator using PHP, JavaScript, and MariaDB to enable users to practice investment strategies in a semi real-time environment. Designed a relational database schema to track user portfolios and transaction history, and integrated the Yahoo Finance API to provide live market data for accurate portfolio tracking.",
+      "description": "Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed semi-live market data into the platform for accurate portfolio valuations, giving new investors a realistic space to get a feel for the market and see how their decisions play out.",
       "git_url": "",
       "name": "Smart Investors"
     }
@@ -33,7 +33,7 @@
       "name": "Java Grep App"
     },
     {
-      "description": "Analyzed two years of transactional data (2009–2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, seasonal peaks, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network.",
+      "description": "Analyzed two years of transactional data (2009–2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network.",
       "git_url": "/python_data_analytics",
       "name": "Python Data Analytics"
     }
@@ -51,13 +51,13 @@
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Developed and delivered a range of software and data engineering projects including a Linux cluster monitoring system, a Java grep application, and a Python data analytics proof of concept in an Agile environment. Built backend services and data pipelines across Java and Python, working in Linux environments with tools such as Docker, PostgreSQL, and Bash.",
+      "description": "Developed and delivered a range of software and data engineering projects including a Linux cluster monitoring system, a Java grep application, and performed data analytics using Python in an Agile environment. Built backend services and data pipelines across Java and Python, working in Linux environments with tools such as Docker, PostgreSQL, and Bash.",
       "duration": "2026-present",
       "title": "Software Developer/Data Engineer"
     },
     {
       "company": "Cardata",
-      "description": "Integrated React.js and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline achieving 93% translation coverage.",
+      "description": "Integrated React.js and TypeScript frontends with Laravel and Node.js backend services to improve system scalability and the user experience of daily payment processing. Engineered a dynamic PDF export system to automate report generation and introduced a localization pipeline to the application, achieving 93% translation coverage.",
       "duration": "Nov 2021-Jul 2022",
       "title": "Full Stack Software Engineer"
     },
@@ -72,24 +72,24 @@
     "competent": [
       "Docker",
       "Linux/Bash",
-      "VBA",
-      "Node.js",
-      "HTML/CSS"
+      "pandas/NumPy",
+      "PySpark",
+      "Node.js"
     ],
     "familiar": [
+      "PHP (Laravel)",
+      "React.js",
       "Django",
-      "C",
-      "Symfony/Composer",
       "Agile/Scrum",
-      "PySpark"
+      "C"
     ],
     "proficient": [
-      "Java",
       "Python",
-      "RDBMS/SQL",
-      "React.js",
-      "PHP (Laravel)"
+      "SQL/RDBMS",
+      "Java",
+      "ETL/Data Pipelines",
+      "PostgreSQL"
     ]
   },
-  "summary": "I am a Computer Science graduate from Wilfrid Laurier University with experience building full-stack applications and end-to-end data pipelines. At Cardata, I built backend services and APIs in Laravel and Node.js to handle reimbursement calculations and financial workflows, while contributing to the frontend with React.js and TypeScript, where I improved the architecture and built reusable components to make the application faster and easier to build on. Previously at Lowe-Martin, I automated data sanitization processes using Python and VBA, improving shipping accuracy and reducing manual effort through efficient batch processing. What excites and makes me passionate about the software industry is that there is always something new to learn or a better way to build something. I genuinely enjoy that process, whether it is picking up a new technology or finding a cleaner solution to a problem I have already solved."
+  "summary": "With over a year of software development experience building applications end to end, I am currently a Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within Linux-based environments, ranging from monitoring systems that track resource usage across a Linux cluster to pipelines that turn raw transactional data into business insights. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches.\nWhat draws me to software is that there's always something new to learn or a better way to build something, and I genuinely enjoy chasing that, whether it's a new technology or a cleaner solution to an old problem."
 }
