@@ -1,13 +1,13 @@
 # Wilson Vuu . Jarvis Consulting
 
-With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within a Linux-based environment. My work ranges from a monitoring system that tracks resource usage across a Linux cluster to a Java application that replicates the Unix grep command, recursively searching directories for regex matches through a Streams and NIO pipeline built with Maven and containerized with Docker. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches.
+With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within a Linux-based environment. My work ranges from a monitoring system that tracks resource usage across a Linux cluster to a Java application that replicates the Unix grep command. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Outside of Jarvis, I built an Inventory Management System, a Spring Boot application which I took on specifically to expose myself to new technology and deepen my backend skills through hands-on practice.
 What draws me to software is that there's always something new to learn or a better way to build something, whether it's using a new technology or implementing a cleaner solution to an old problem.
 
 ## Skills
 
-**Proficient:** Java, Python, SQL/RDBMS, REST APIs, Spring Framework, Unit Testing (JUnit)
+**Proficient:** Java, Python, SQL/RDBMS, REST APIs, Unit Testing (JUnit)
 
-**Competent:** Docker, Linux/Bash, Node.js, React.js, Git
+**Competent:** Spring Boot, React.js, Linux/Bash, Node.js, Git
 
 **Familiar:** PHP (Laravel), Hibernate, Agile/Scrum, HTML/CSS, C
 
