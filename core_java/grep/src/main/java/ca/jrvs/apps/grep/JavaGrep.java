@@ -2,17 +2,17 @@ package ca.jrvs.apps.grep;
 
 import java.io.*;
 import java.util.List;
+import java.util.stream.Stream;
 
 
 
 public interface JavaGrep {
 
-
-  void process() throws  IOException;
-  List <File> listFiles(String rootDir) throws  IOException;
-  List<String> readLines (File inputFile);
+  void process();
+  List<File> listFiles(String rootDir);
+  List<String> readLines(File inputFile);
   boolean containsPattern(String line);
-  void writeToFile(List<String> lines) throws IOException;
+  void writeToFile(Stream<String> lines) throws IOException;
 
 
   String getRootPath();
