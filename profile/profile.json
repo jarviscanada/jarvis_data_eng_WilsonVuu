@@ -16,7 +16,7 @@
       "name": "Inventory Management System"
     },
     {
-      "description": "Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed live market data into the platform for accurate portfolio valuations, giving new investors a realistic space to get a feel for the market and see how their decisions play out.",
+      "description": "Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed live market data into the platform for accurate portfolio valuations.",
       "git_url": "",
       "name": "Smart Investors"
     }

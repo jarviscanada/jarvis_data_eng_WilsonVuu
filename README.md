@@ -26,7 +26,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 ## Highlighted Projects
 **Inventory Management System**: The Inventory Management System is a Spring Boot application with a React frontend, designed to help businesses organize their catalog and track stock levels. It models the relationships between items, categories, and suppliers through a relational schema using Spring Data JPA/Hibernate, and exposes a RESTful API to create, update, and query inventory data across the catalog, delivering a clear, maintainable foundation for keeping stock accurate and operations running smoothly.
 
-**Smart Investors**: Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed live market data into the platform for accurate portfolio valuations, giving new investors a realistic space to get a feel for the market and see how their decisions play out.
+**Smart Investors**: Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed live market data into the platform for accurate portfolio valuations.
 
 
 ## Professional Experiences
