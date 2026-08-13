@@ -32,10 +32,13 @@ jarvis_projects:
     description: "The Linux Cluster Monitoring project is a system designed to track hardware specifications and resource usage across a networked Linux cluster. Each node collects its hardware profile on initialization and continuously logs CPU, memory, and disk metrics at scheduled intervals using crontab, with all data stored in a centralized PostgreSQL database managed through Docker. The data is organized into two tables covering hardware specifications and ongoing resource usage, giving the LCA team at Jarvis the visibility to monitor system performance over time and make informed decisions around resource allocation."
   - name: "Java Grep App"
     git_url: "/core_java/grep"
-    description: "Implemented a Java application that replicates the Unix grep command, taking a regex pattern, a root directory, and an output file as arguments. The app recursively searches all files in the directory and writes matching lines to the output. Built using Java's Streams API with a lazy pipeline using Java NIO's Files.walk() for file traversal, flatMap to flatten each file's lines into a single stream, and filter to match the regex, ensuring memory stays low regardless of file or directory size. Used Maven for dependency and build management, packaging the app into a fat jar with all dependencies bundled. Containerized the application with Docker and pushed the image to DockerHub." 
+    description: "Implemented a Java application that replicates the Unix grep command, taking a regex pattern, a root directory, and an output file as arguments. The app recursively searches all files in the directory and writes matching lines to the output. Built using Java's Streams API with a lazy pipeline using Java NIO's Files.walk() for file traversal, flatMap to flatten each file's lines into a single stream, and filter to match the regex, ensuring memory stays low regardless of file or directory size. Used Maven for dependency and build management, packaging the app into a fat jar with all dependencies bundled. Containerized the application with Docker and pushed the image to DockerHub."
   - name: "Python Data Analytics"
     git_url: "/python_data_analytics"
-    description: "Analyzed two years of transactional data (2009–2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network."
+    description: "Analyzed two years of transactional data (2009-2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network."
+  - name: "Databricks Data Engineering Project"
+    git_url: "/spark"
+    description: "Designed and implemented end-to-end data pipelines in Azure Databricks using PySpark and the Medallion Architecture (Bronze, Silver, Gold) to process transactional, customer, and stock market data from multiple sources. Built scalable ETL and DLT pipelines to ingest, cleanse, transform, and model data into Delta tables optimized for analytics. Delivered datasets and interactive dashboards that identified fraud patterns, customer behavior trends, and stock performance metrics."
 # List of personal or academic projects
 highlighted_projects:
   - name: "Inventory Management System"
@@ -67,7 +70,10 @@ education:
     awards_achievements:
 # Optional section
 others:
+  - title: "Certifications"
+    bullets:
+      - "Databricks Certified Data Engineer Associate (July 2026)"
   - title: "Activities/Hobbies"
     bullets:
-      - "Badminton player: Still a beginner, but I play in weekly recreational sessions. It’s a fun way to stay active, and I really enjoy the quick pace and the social side of the game."
+      - "Badminton player: Still a beginner, but I play in weekly recreational sessions. It's a fun way to stay active, and I really enjoy the quick pace and the social side of the game."
       - "Hiking enthusiast: I love hitting local trails and getting lost in conservation areas for a few hours. For me, it's a good way to clear my mind and recharge."
