@@ -53,7 +53,7 @@
     },
     {
       "bullets": [
-        "Badminton player: Still a beginner, but I play in weekly recreational sessions. It's a fun way to stay active, and I really enjoy the quick pace and the social side of the game.",
+        "Badminton player: Still a beginner, but I play in weekly recreational sessions. It’s a fun way to stay active, and I really enjoy the quick pace and the social side of the game.",
         "Hiking enthusiast: I love hitting local trails and getting lost in conservation areas for a few hours. For me, it's a good way to clear my mind and recharge."
       ],
       "title": "Activities/Hobbies"
@@ -85,22 +85,24 @@
       "React.js",
       "Linux/Bash",
       "Node.js",
-      "Git"
+      "Git",
+      "Docker"
     ],
     "familiar": [
       "PHP (Laravel)",
       "Hibernate",
       "Agile/Scrum",
       "HTML/CSS",
-      "C"
+      "Unit Testing (JUnit)"
     ],
     "proficient": [
       "Java",
       "Python",
       "SQL/RDBMS",
       "REST APIs",
-      "Unit Testing (JUnit)"
+      "ETL Pipelines",
+      "Spark"
     ]
   },
-  "summary": "With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within a Linux-based environment. My work ranges from a monitoring system that tracks resource usage across a Linux cluster to a Java application that replicates the Unix grep command. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Outside of Jarvis, I built an Inventory Management System, a Spring Boot application which I took on specifically to expose myself to new technology and deepen my backend skills through hands-on practice.\nWhat draws me to software is that there's always something new to learn or a better way to build something, whether it's using a new technology or implementing a cleaner solution to an old problem."
+  "summary": "With over a year of software development experience building applications end to end, I am currently a Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within Linux-based environments, ranging from monitoring systems that track resource usage across a Linux cluster to pipelines that turn raw transactional data into business insights. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches.\nWhat draws me to software is that there's always something new to learn or a better way to build something, and I genuinely enjoy chasing that, whether it's a new technology or a cleaner solution to an old problem."
 }
