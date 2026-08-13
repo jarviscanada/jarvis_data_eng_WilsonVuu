@@ -1,0 +1,17 @@
+.DS_Store
+**/.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+target/
+*.iml
+out/
+log/
+dependency-reduced-pom.xml
+.idea/
+.config/
+.ipython/
+.jupyter/
+.local/
+.npm/
+.cache

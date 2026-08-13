@@ -1,15 +1,15 @@
 # Wilson Vuu . Jarvis Consulting
 
-With over a year of software development experience building applications end to end, I am currently a Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within Linux-based environments, ranging from monitoring systems that track resource usage across a Linux cluster to pipelines that turn raw transactional data into business insights. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches.
-What draws me to software is that there's always something new to learn or a better way to build something, and I genuinely enjoy chasing that, whether it's a new technology or a cleaner solution to an old problem.
+With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within a Linux-based environment. My work ranges from a monitoring system that tracks resource usage across a Linux cluster to a Java application that replicates the Unix grep command. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Outside of Jarvis, I built an Inventory Management System, a Spring Boot application which I took on specifically to expose myself to new technology and deepen my backend skills through hands-on practice.
+What draws me to software is that there's always something new to learn or a better way to build something, whether it's using a new technology or implementing a cleaner solution to an old problem.
 
 ## Skills
 
-**Proficient:** Python, SQL/RDBMS, Java, ETL/Data Pipelines, PostgreSQL
+**Proficient:** Java, Python, SQL/RDBMS, REST APIs, Unit Testing (JUnit)
 
-**Competent:** Docker, Linux/Bash, pandas/NumPy, PySpark, Node.js
+**Competent:** Spring Boot, React.js, Linux/Bash, Node.js, Git
 
-**Familiar:** PHP (Laravel), React.js, Django, Agile/Scrum, C
+**Familiar:** PHP (Laravel), Hibernate, Agile/Scrum, HTML/CSS, C
 
 ## Jarvis Projects
 
@@ -18,7 +18,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 **Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/linux_sql)]: The Linux Cluster Monitoring project is a system designed to track hardware specifications and resource usage across a networked Linux cluster. Each node collects its hardware profile on initialization and continuously logs CPU, memory, and disk metrics at scheduled intervals using crontab, with all data stored in a centralized PostgreSQL database managed through Docker. The data is organized into two tables covering hardware specifications and ongoing resource usage, giving the LCA team at Jarvis the visibility to monitor system performance over time and make informed decisions around resource allocation.
 
-**Java Grep App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/core_java/grep)]: Implemented a Java application that replicates the Unix grep command, taking a regex pattern, a root directory, and an output file as arguments. The app recursively searches all files in the directory and writes matching lines to the output. Built using Java's Streams API with a lazy pipeline using Java NIO's Files.walk() for file traversal, flatMap to flatten each file's lines into a single stream, and filter to match the regex, ensuring memory stays low regardless of file or directory size. Used Maven for dependency and build management, packaging the app into a fat jar with all dependencies bundled. Containerized the application with Docker and pushed the image to DockerHub.
+**Java Grep App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/core_java/grep)]: Implemented a Java application that replicates the Unix grep command, taking a regex pattern, a root directory, and an output file as arguments. The app recursively searches all files in the directory and writes matching lines to the output. Built using Java's Streams API with a lazy pipeline using Java NIO's Files.walk() for file traversal, flatMap to flatten each file's lines into a single stream, and filter to match the regex, ensuring memory stays low regardless of file or directory size. Used Maven for dependency and build management, packaging the app into a fat jar with all dependencies bundled. Containerized the application with Docker and pushed the image to DockerHub. Verified behavior with unit tests across edge cases.
 
 **Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/python_data_analytics)]: Analyzed two years of transactional data (2009-2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network.
 
@@ -26,9 +26,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Highlighted Projects
-**Inventory Management System**: The Inventory Management System is a Spring Boot application with a React frontend, designed to help businesses organize their catalog and track stock levels. It models the relationships between items, categories, and suppliers through a relational schema, and exposes a RESTful API to create, update, and query inventory data across the catalog, delivering a clear, maintainable foundation for keeping stock accurate and operations running smoothly.
+**Inventory Management System**: The Inventory Management System is a Spring Boot application with a React frontend, designed to help businesses organize their catalog and track stock levels. It models the relationships between items, categories, and suppliers through a relational schema using Spring Data JPA/Hibernate, and exposes a RESTful API to create, update, and query inventory data across the catalog, delivering a clear, maintainable foundation for keeping stock accurate and operations running smoothly.
 
-**Smart Investors**: Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed semi-live market data into the platform for accurate portfolio valuations, giving new investors a realistic space to get a feel for the market and see how their decisions play out.
+**Smart Investors**: Smart Investors is a web application with a JavaScript frontend that lets users practice investment strategies in a risk-free environment. It tracks each user's portfolio and transaction history through a relational database, and integrates the Yahoo Finance API to feed live market data into the platform for accurate portfolio valuations.
 
 
 ## Professional Experiences
