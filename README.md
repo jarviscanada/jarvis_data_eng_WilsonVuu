@@ -1,15 +1,15 @@
 # Wilson Vuu . Jarvis Consulting
 
-With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend services and data pipelines in Java and Python within a Linux-based environment. My work ranges from a monitoring system that tracks resource usage across a Linux cluster to a Java application that replicates the Unix grep command. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Outside of Jarvis, I built an Inventory Management System, a Spring Boot application which I took on specifically to expose myself to new technology and deepen my backend skills through hands-on practice.
+With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend applications in Java while designing Python data pipelines that transform raw data into actionable business insights. This spans everything from application development to an end-to-end Azure Databricks pipeline built with PySpark and the Medallion Architecture. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Most recently, I earned the Databricks Certified Data Engineer Associate certification, validating my ability to build production-grade pipelines on modern cloud platforms.
 What draws me to software is that there's always something new to learn or a better way to build something, whether it's using a new technology or implementing a cleaner solution to an old problem.
 
 ## Skills
 
-**Proficient:** Java, Python, SQL/RDBMS, REST APIs, Unit Testing (JUnit)
+**Proficient:** Java, Python, SQL/RDBMS, REST APIs, ETL Pipelines, Spark
 
-**Competent:** Spring Boot, React.js, Linux/Bash, Node.js, Git
+**Competent:** Spring Boot, React.js, Linux/Bash, Node.js, Git, Docker
 
-**Familiar:** PHP (Laravel), Hibernate, Agile/Scrum, HTML/CSS, C
+**Familiar:** PHP (Laravel), Hibernate, Agile/Scrum, HTML/CSS, Unit Testing (JUnit)
 
 ## Jarvis Projects
 
@@ -20,7 +20,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 **Java Grep App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/core_java/grep)]: Implemented a Java application that replicates the Unix grep command, taking a regex pattern, a root directory, and an output file as arguments. The app recursively searches all files in the directory and writes matching lines to the output. Built using Java's Streams API with a lazy pipeline using Java NIO's Files.walk() for file traversal, flatMap to flatten each file's lines into a single stream, and filter to match the regex, ensuring memory stays low regardless of file or directory size. Used Maven for dependency and build management, packaging the app into a fat jar with all dependencies bundled. Containerized the application with Docker and pushed the image to DockerHub. Verified behavior with unit tests across edge cases.
 
-**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/python_data_analytics)]: Analyzed two years of transactional data (2009–2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network.
+**Python Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/python_data_analytics)]: Analyzed two years of transactional data (2009-2011) for London Gift Shop (LGS), a UK-based wholesale retailer, to find actionable insights around customer retention and revenue growth. Applied RFM segmentation to identify high-value customers, quantify at-risk revenue, and support targeted win-back campaigns. Explored monthly sales trends, new vs. existing customer revenue splits, and customer health status over time to inform marketing and inventory decisions. Built using Python (pandas, NumPy, matplotlib, seaborn) in a Jupyter Notebook environment, with data stored in a PostgreSQL data warehouse, both running in Docker containers connected via a shared bridge network.
+
+**Databricks Data Engineering Project** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu/tree/master/spark)]: Designed and implemented end-to-end data pipelines in Azure Databricks using PySpark and the Medallion Architecture (Bronze, Silver, Gold) to process transactional, customer, and stock market data from multiple sources. Built scalable ETL and DLT pipelines to ingest, cleanse, transform, and model data into Delta tables optimized for analytics. Delivered datasets and interactive dashboards that identified fraud patterns, customer behavior trends, and stock performance metrics.
 
 
 ## Highlighted Projects
@@ -43,5 +45,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Miscellaneous
+- Databricks Certified Data Engineer Associate (July 2026)
 - Badminton player: Still a beginner, but I play in weekly recreational sessions. It’s a fun way to stay active, and I really enjoy the quick pace and the social side of the game.
 - Hiking enthusiast: I love hitting local trails and getting lost in conservation areas for a few hours. For me, it's a good way to clear my mind and recharge.
