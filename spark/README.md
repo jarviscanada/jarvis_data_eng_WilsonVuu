@@ -11,7 +11,7 @@ Two pipelines will be developed for different ingestion and pipeline styles. One
 
 Both projects run on Databricks and share the same medallion backbone: raw data lands untouched in **bronze**, gets typed and cleaned in **silver**, and is aggregated into query-ready **gold** tables that feed a dashboard. 
 
-### Project A — Financial Fraud ETL
+### Financial Fraud ETL
 
 **Dataset.** A synthetic banking dataset covering the 2010s, combining detailed card transactions with customer and card context: `transactions_data.csv` (amounts, timestamps, merchant details), `cards_data.csv` (card metadata), `users_data.csv` (customer demographics), `mcc_codes.json` (merchant-category classification codes), and `train_fraud_labels.json` (binary fraud/legitimate labels). It supports fraud detection, customer-behavior analysis, and spend forecasting.
 
