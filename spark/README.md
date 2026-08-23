@@ -17,6 +17,8 @@ Both projects run on Databricks and share the same medallion backbone: raw data 
 
 **Analytics work.** The silver transaction table is enriched by joining in the MCC codes and fraud labels, so downstream analysis has both a human-readable merchant category and a fraud flag on every transaction. The gold layer then answers targeted fraud questions, including: which days of the week see the most fraud, how the fraud rate trends month over month, which users and merchants carry the highest fraud volume, which merchant categories have the highest fraud rate and total fraud loss, how fraud is distributed by time of day, average transaction amount for fraud vs. non-fraud, daily monetary losses to fraud, and whether fraud skews toward high-value purchases. These tables are the direct source for the dashboard.
 
+![ETL Pipeline Diagram](assets/ETL_diagram.png)
+
 > Notebooks: [`ETL_databricks_bronze.ipynb`](./ETL_pipeline/ETL_databricks_bronze.ipynb) · [`ETL_databricks_silver.ipynb`](./ETL_pipeline/ETL_databricks_silver.ipynb)) · [`ETL_databricks_gold.ipynb`](./ETL_pipeline/ETL_databricks_gold.ipynb))
 
 **Architecture & data flow.** Ingestion is multi-source into Databricks: `transactions_data.csv` and `cards_data.csv` are loaded into an **Azure SQL Database** and pulled into Databricks over **JDBC** and **Lakeflow Connect**; `users_data.csv` and the JSON files land in **Azure Data Lake Storage** and are pulled through a Unity Catalog **external location**, with **Azure Data Factory** used to copy the `mcc_codes` and `fraud_labels` JSON into Delta. From there the medallion layers run as **separate notebooks per stage** — running the bronze notebook refreshes every bronze table, and likewise for silver and gold — and a Databricks **Job** chains Bronze → Silver → Gold → Dashboard refresh.
@@ -31,6 +33,8 @@ Both projects run on Databricks and share the same medallion backbone: raw data 
 **Architecture & data flow.** Python **ingestion job** calls the API and lands raw JSON into a Unity Catalog **Volume** (`/Volumes/.../raw/{daily,quote,company}`) — ingestion is kept out of the pipeline because DLT table functions can't perform network calls or side effects. The **DLT pipeline** then reads those folders with **Auto Loader** (`cloudFiles`) into streaming bronze tables, cleans and de-duplicates them in silver, and materializes the windowed gold table. A Databricks **Job** orchestrates ingestion → pipeline update → dashboard refresh on a daily schedule.
 
 **Design decisions** Bronze and silver are **streaming tables**. Gold is a **materialized view** because its window functions recompute over full history. Company and latest quote only pull the latest row per symbol. The pipeline runs in **Triggered** mode (process available data, then stop) rather than Continuous, which suits a once-daily batch and is cheaper. **Failure handling** relies on DLT retries, silver **expectations** to drop bad rows, and an rate-limit guard in ingestion that raises on the API's response instead of writing null files.
+
+![DLT Pipeline Diagram](assets/DLT_diagram.png)
 
 ---
 
