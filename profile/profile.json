@@ -81,27 +81,27 @@
   ],
   "skills": {
     "competent": [
-      "Spring Boot",
+      "Azure",
+      "Docker",
       "React.js",
       "Linux/Bash",
-      "Node.js",
-      "Git",
-      "Docker"
+      "Node.js"
     ],
     "familiar": [
       "PHP (Laravel)",
-      "Hibernate",
       "Agile/Scrum",
       "HTML/CSS",
-      "Unit Testing (JUnit)"
+      "REST APIs",
+      "Javascript/TypeScript"
     ],
     "proficient": [
-      "Java",
       "Python",
       "SQL/RDBMS",
-      "REST APIs",
       "ETL Pipelines",
-      "Spark"
+      "Databricks",
+      "Spark/Pyspark",
+      "Java",
+      "Git"
     ]
   },
   "summary": "With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend applications in Java while designing Python data pipelines that transform raw data into actionable business insights. This spans everything from application development to an end-to-end Azure Databricks pipeline built with PySpark and the Medallion Architecture. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Most recently, I earned the Databricks Certified Data Engineer Associate certification, validating my ability to build production-grade pipelines on modern cloud platforms.\nWhat draws me to software is that there's always something new to learn or a better way to build something, whether it's using a new technology or implementing a cleaner solution to an old problem."
