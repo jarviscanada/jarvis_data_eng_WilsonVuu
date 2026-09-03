@@ -5,11 +5,11 @@ What draws me to software is that there's always something new to learn or a bet
 
 ## Skills
 
-**Proficient:** Java, Python, SQL/RDBMS, REST APIs, ETL Pipelines, Spark
+**Proficient:** Python, SQL/RDBMS, ETL Pipelines, Databricks, Spark/Pyspark, Java, Git
 
-**Competent:** Spring Boot, React.js, Linux/Bash, Node.js, Git, Docker
+**Competent:** Azure, Docker, React.js, Linux/Bash, Node.js
 
-**Familiar:** PHP (Laravel), Hibernate, Agile/Scrum, HTML/CSS, Unit Testing (JUnit)
+**Familiar:** PHP (Laravel), Agile/Scrum, HTML/CSS, REST APIs, Javascript/TypeScript
 
 ## Jarvis Projects
 
