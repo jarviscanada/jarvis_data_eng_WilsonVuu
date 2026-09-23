@@ -1,0 +1,57 @@
+STEP 0 -> LOCAL CLUSTER
+Docker Desktop: Settings > Kubernetes > Enable > Apply & Restart
+kubectl get nodes # want nodes STATUS = Ready
+
+STEP 1 -> BUILD THE AGENT IMAGE
+cd docker
+
+make sure Dockerfile is named exactly "Dockerfile" (no extension)
+make sure scripts are in docker/scripts/
+
+ls
+ls scripts # want host_info.sh, host_usage.sh
+docker build -t lca_node:v1 .
+docker images # confirm lca_node v1 appears
+
+STEP 2 — DEPLOY THE DATABASE
+cd ../k8s
+kubectl apply -f postgres.yaml
+kubectl get pods # wait for postgres-0 = 1/1 Running
+
+STEP 3 — CREATE TABLES
+
+from the folder that has ddl.sql (linux_sql/sql/)
+
+kubectl exec -i postgres-0 -- psql -U postgres -d host_agent < ddl.sql
+
+verify:
+
+kubectl exec -it postgres-0 -- psql -U postgres -d host_agent -c "\dt"
+
+want host_info and host_usage listed
+
+STEP 4 — DEPLOY THE AGENT (DaemonSet)
+kubectl apply -f daemonset.yaml
+kubectl get pods -o wide # want lca-agent-xxxxx Running on desktop-worker
+
+STEP 5 — VERIFY DATA LANDS
+kubectl logs -l app=lca-agent # agent output / errors
+kubectl exec -it postgres-0 -- psql -U postgres -d host_agent -c "SELECT * FROM host_usage;"
+
+new rows beyond the sample data = pipeline works end to end
+
+DEBUG COMMANDS (any pod)
+kubectl get pods # status of everything
+kubectl get pods -o wide # + which node each pod is on
+kubectl describe pod POD_NAME # events / why it's stuck
+kubectl logs POD_NAME # app output/errors
+kubectl exec -it POD_NAME -- sh # shell inside a pod
+
+RESET / REDO (start the deploy over)
+kubectl delete -f daemonset.yaml
+kubectl delete -f postgres.yaml
+
+note: deleting postgres may keep the volume; delete the PVC too for a clean slate:
+
+kubectl get pvc
+kubectl delete pvc pgdata-postgres-0

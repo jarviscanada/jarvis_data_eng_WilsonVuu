@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod #one off job 
+metadata:
+  name: lca-agent-once
+spec:
+  restartPolicy: Never              # run once, don't restart
+  containers:
+    - name: lca-agent
+      image: lca_node:v2
+      imagePullPolicy: IfNotPresent
+      command: ["/bin/bash", "-c"]
+      args:
+        - |
+          /app/host_info.sh postgres 5432 host_agent postgres password
+          /app/host_usage.sh postgres 5432 host_agent postgres password

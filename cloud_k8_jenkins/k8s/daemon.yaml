@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: DaemonSet 
+# This DaemonSet will run the lca-agent container on every node in the cluster.
+metadata:
+  name: lca-agent
+spec:
+  selector:
+    matchLabels:
+      app: lca-agent
+  template:
+    metadata:
+      labels:
+        app: lca-agent
+    spec:
+      containers:
+        - name: lca-agent
+          image: lca_node:v2        # image
+          imagePullPolicy: IfNotPresent   
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              /app/host_info.sh postgres 5432 host_agent postgres password
+              while true; do
+                /app/host_usage.sh postgres 5432 host_agent postgres password 
+                sleep 60
+              done
+              
