@@ -1,0 +1,55 @@
+pipeline {
+    agent {
+        kubernetes {
+            yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: az-kubectl
+    image: jrvs/jenkins_agent:az_kubectl
+    command:
+    - cat
+    tty: true
+'''
+        }
+    }
+    environment {
+        AZ_USER    = credentials('az-user')
+        AZ_PWD     = credentials('az-password')
+        AZ_TENANT  = credentials('az-tenant')
+        ACR_LOGIN  = 'lcamonitor.azurecr.io'
+        IMAGE_NAME = 'lca_node'
+        IMAGE_TAG  = 'v2'
+        RESOURCE_GROUP = 'lca-aks-rg'
+        CLUSTER_NAME   = 'lca-cluster-dev'
+    }
+    stages {
+        stage('Azure Login') {
+            steps {
+                container('az-kubectl') {
+                    sh '''
+                        az login --service-principal \
+                          --username $AZ_USER \
+                          --password $AZ_PWD \
+                          --tenant $AZ_TENANT
+                    '''
+                }
+            }
+        }
+        stage('Deploy to Dev') {
+            steps {
+                container('az-kubectl') {
+                    sh '''
+                        az aks get-credentials \
+                          --resource-group $RESOURCE_GROUP \
+                          --name $CLUSTER_NAME --overwrite-existing
+
+                        kubectl set image daemonset/lca-agent \
+                          lca-agent=${ACR_LOGIN}/${IMAGE_NAME}:${IMAGE_TAG}
+                    '''
+                }
+            }
+        }
+    }
+}
