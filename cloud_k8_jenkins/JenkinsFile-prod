@@ -37,7 +37,7 @@ spec:
                 }
             }
         }
-        stage('Deploy to Dev') {
+        stage('Deploy to Prod') {
             steps {
                 container('az-kubectl') {
                     sh '''
