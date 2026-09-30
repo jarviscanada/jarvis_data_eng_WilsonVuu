@@ -5,7 +5,7 @@
       "degree": "Bachelor of Science",
       "department": "Computer Science",
       "duration": "2017-2022",
-      "school_name": "Wilfrid Laurier University"
+      "school_name": "Wilfid Laurier University"
     }
   ],
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu",
@@ -26,6 +26,11 @@
       "description": "The Linux Cluster Monitoring project is a system designed to track hardware specifications and resource usage across a networked Linux cluster. Each node collects its hardware profile on initialization and continuously logs CPU, memory, and disk metrics at scheduled intervals using crontab, with all data stored in a centralized PostgreSQL database managed through Docker. The data is organized into two tables covering hardware specifications and ongoing resource usage, giving the LCA team at Jarvis the visibility to monitor system performance over time and make informed decisions around resource allocation.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
+    },
+    {
+      "description": "Migrated the Linux Cluster Monitor to Azure, containerizing the monitoring agent with Docker and deploying it to Azure Kubernetes Service (AKS). Deployed the agent as a Kubernetes DaemonSet, so every node reports CPU, memory, and disk usage automatically, including new nodes as the cluster scales. Stored metrics in Azure Database for PostgreSQL and automated builds with Jenkins CI/CD, so changes are validated before reaching the production cluster.",
+      "git_url": "/cloud_k8_jenkins",
+      "name": "Kubernetes Cluster Monitor"
     },
     {
       "description": "Implemented a Java application that replicates the Unix grep command, taking a regex pattern, a root directory, and an output file as arguments. The app recursively searches all files in the directory and writes matching lines to the output. Built using Java's Streams API with a lazy pipeline using Java NIO's Files.walk() for file traversal, flatMap to flatten each file's lines into a single stream, and filter to match the regex, ensuring memory stays low regardless of file or directory size. Used Maven for dependency and build management, packaging the app into a fat jar with all dependencies bundled. Containerized the application with Docker and pushed the image to DockerHub. Verified behavior with unit tests across edge cases.",
@@ -81,28 +86,28 @@
   ],
   "skills": {
     "competent": [
-      "Spring Boot",
+      "Azure",
+      "Docker",
       "React.js",
       "Linux/Bash",
-      "Node.js",
-      "Git",
-      "Docker"
+      "Node.js"
     ],
     "familiar": [
       "PHP (Laravel)",
-      "Hibernate",
       "Agile/Scrum",
       "HTML/CSS",
-      "Unit Testing (JUnit)"
+      "REST APIs",
+      "Javascript/TypeScript"
     ],
     "proficient": [
-      "Java",
       "Python",
       "SQL/RDBMS",
-      "REST APIs",
       "ETL Pipelines",
-      "Spark"
+      "Databricks",
+      "Spark/Pyspark",
+      "Java",
+      "Git"
     ]
   },
-  "summary": "With over a year of software development experience building applications end to end, I am currently a Software Developer/Data Engineer at Jarvis, where I build backend applications in Java while designing Python data pipelines that transform raw data into actionable business insights. This spans everything from application development to an end-to-end Azure Databricks pipeline built with PySpark and the Medallion Architecture. Previously at Cardata, I built Laravel and Node.js APIs for financial workflows while improving the React.js/TypeScript frontend with reusable components, and at Lowe-Martin, I automated data sanitization with Python and VBA to improve mailing accuracy and speed up bulk mail batches. Most recently, I earned the Databricks Certified Data Engineer Associate certification, validating my ability to build production-grade pipelines on modern cloud platforms.\nWhat draws me to software is that there's always something new to learn or a better way to build something, whether it's using a new technology or implementing a cleaner solution to an old problem."
+  "summary": "As a Databricks Certified Data Engineer Associate with a background in software engineering, I’m currently at Jarvis, where I’ve been building Java backend applications and Python data pipelines end to end on Linux using PostgreSQL, SQL, and Azure Databricks, as well as containerizing and deploying applications in the cloud. I’ve been able to build on my previous experience at Cardata and Lowe-Martin, where I worked with backend APIs, databases, and automation using technologies like Node.js, Laravel, Python, and VBA to support financial reimbursement and logistics workflows. What draws me to software and data engineering is that there’s always something new to learn or a better way to build something. Whether it’s learning a new technology or improving an existing solution, I enjoy continuously learning and finding ways to make things better."
 }
