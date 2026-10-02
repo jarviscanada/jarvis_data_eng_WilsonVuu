@@ -11,6 +11,7 @@ versions roll out with a single pipeline run.
 
 
 ## Application architecture:
+
 The monitoring agent runs as a Kubernetes DaemonSet (one agent pod per node), each collecting metrics from the node it
 runs on and writing to a centralized PostgreSQL database 
 deployed as a StatefulSet with a persistent volume. 
@@ -25,13 +26,45 @@ same container image from a shared Azure Container Registry (ACR).
 
 **Note:** Environments are isolated so development work cannot affect production.
 
-## Jenkins CI/CD pipeline:
+![Application Architecture](./assets/k8_diagram.png)
 
-Jenkins runs a Declarative Pipeline that authenticates to Azure using a service principal and
-deploys the application via Docker Image of our application then deploys. 
+### Kubernetes Deployment
 
-Dev deploys the `develop`
-branch prod deploys `master`.
+Inside each cluster, the DaemonSet runs one agent pod per node, all writing to a
+single PostgreSQL StatefulSet. The StatefulSet is backed by a PersistentVolume
+(an Azure managed disk), and a Service provides the stable address the agents
+connect to.
+
+```mermaid
+graph TD
+    subgraph Cluster[AKS Cluster]
+        subgraph N1[Node 1]
+            A1[Agent Pod]
+        end
+        subgraph N2[Node 2]
+            A2[Agent Pod]
+        end
+        subgraph N3[Node 3]
+            A3[Agent Pod]
+        end
+        SVC[postgres Service]
+        DB[(PostgreSQL<br/>StatefulSet)]
+        VOL[Azure Disk<br/>PersistentVolume]
+
+        A1 --> SVC
+        A2 --> SVC
+        A3 --> SVC
+        SVC --> DB
+        DB --> VOL
+    end
+```
+
+## Jenkins CI/CD Pipeline
+
+Jenkins runs a Declarative Pipeline that authenticates to Azure using a service
+principal, then deploys the application to the cluster by updating the
+DaemonSet's image (`kubectl set image`). Dev deploys the `develop` branch; prod
+deploys the `master` branch.
 
 ```mermaid
 graph LR
@@ -43,9 +76,22 @@ graph LR
     Deploy --> Cluster[AKS Cluster]
 ```
 
-## Application Architecture
+Pipeline stages:
+1. **Checkout** — Jenkins clones repository.
+2. **Azure Login** — authenticates using the stored service principal.
+3. **Build & Push** — builds the image and pushes to ACR
+4. **Deploy** — updates the target cluster's DaemonSet with `kubectl set image`.
 
-![Application Architecture](./assets/k8_diagram.png)
+The pipeline runs on a Kubernetes agent pod using a custom image
+(`jrvs/jenkins_agent:az_kubectl`) pre-loaded with Azure CLI and kubectl.
 
-The agent is packaged as a container image (`lca_node`) and run as a DaemonSet,
-placing one collector pod on every node. Each
+## Improvements
+
+1. **Managed database** — PostgreSQL currently runs self-managed in-cluster as a
+   StatefulSet. Migrating to Azure Database for PostgreSQL would offload backups,
+   patching, and high availability to Azure.
+
+2. **Secrets in a vault** — database credentials are stored as Kubernetes Secrets
+   (base64-encoded, not encrypted). Moving them to Azure Key Vault would provide
+   proper encryption and access control.
+   
