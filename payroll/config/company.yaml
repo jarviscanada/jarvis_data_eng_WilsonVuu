@@ -1,0 +1,16 @@
+# Company-specific payroll settings. EDIT THIS FILE for your organization.
+# The skill reads this instead of guessing anything company-specific.
+
+company_name: "Example Co."
+province: ON
+pay_frequency: biweekly            # weekly | biweekly | semimonthly | monthly
+anchor_pay_date: 2026-01-09        # any known past pay date (a Friday)
+days_after_period_end: 6           # period ends Saturday, paid the following Friday
+holiday_rule: previous_business_day  # or next_business_day
+semimonthly_days: 15,31            # only used when pay_frequency = semimonthly
+monthly_day: 31                    # only used when pay_frequency = monthly
+
+payroll_cutoff: "Monday 5:00 pm ET, the week of pay day"
+vacation_pay_method: accrue        # accrue | on_each_cheque
+payroll_contact: "payroll@example.com"
+hris: "none connected"             # e.g. Workday, ADP, Ceridian Dayforce (via MCP)
