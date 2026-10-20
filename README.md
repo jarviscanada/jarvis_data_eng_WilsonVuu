@@ -42,7 +42,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_WilsonVuu]
 
 
 ## Education
-**Wilfid Laurier University (2017-2022)**, Bachelor of Science, Computer Science
+**Wilfrid Laurier University (2017-2022)**, Bachelor of Science, Computer Science
 
 
 ## Miscellaneous
