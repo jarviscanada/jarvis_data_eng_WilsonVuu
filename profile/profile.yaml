@@ -71,7 +71,7 @@ professional_experience:
     description: "Used VBA and Python to automate the sanitization of CSV data, resulting in an increase in shipping accuracy. Built custom report generation tools in Microsoft Access and Excel to display and present shipping and address data for internal review and validation. Built a prototype of the corporate website using HTML/CSS and JavaScript as a visual mockup for leadership to review and approve."
 # List of education
 education:
-  - school_name: "Wilfid Laurier University"
+  - school_name: "Wilfrid Laurier University"
     duration: "2017-2022"
     degree: "Bachelor of Science"
     department: "Computer Science"
