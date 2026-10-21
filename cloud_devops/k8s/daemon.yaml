@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: lca-agent
+spec:
+  selector:
+    matchLabels:
+      app: lca-agent
+  updateStrategy:              
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: lca-agent
+    spec:
+      containers:
+        - name: lca-agent
+          image: lca_node:v2
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_DB
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              /app/host_info.sh postgres 5432 "$DB_NAME" "$DB_USER" "$DB_PASSWORD"
+              while true; do
+                /app/host_usage.sh postgres 5432 "$DB_NAME" "$DB_USER" "$DB_PASSWORD"
+                sleep 60
+              done
